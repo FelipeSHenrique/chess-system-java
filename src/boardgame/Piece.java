@@ -7,6 +7,7 @@ public class Piece {
 	
 	public Piece(Board board) {
 		this.board = board;
+		//POSIÇÃO DE UMA PEÇA RECEM CRIADO VAI SER NULLO
 		position = null;
 	}
 
