@@ -15,14 +15,17 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		ChessMatch chessMatch = new ChessMatch();
 		
-		while (true) {	
-			try {	
-				UI.clearScreen();//LIMPA TELA	
+		while (true) {
+			try {
+				UI.clearScreen(); //LIMPA TELA
 				UI.printBoard(chessMatch.getPieces());
 				System.out.println();
 				System.out.print("Source: ");
 				ChessPosition source = UI.readChessPosition(sc);
 				
+				boolean[][] possibleMoves = chessMatch.possibleMoves(source);
+				UI.clearScreen();
+				UI.printBoard(chessMatch.getPieces(), possibleMoves);
 				System.out.println();
 				System.out.print("Target: ");
 				ChessPosition target = UI.readChessPosition(sc);
@@ -38,7 +41,5 @@ public class Program {
 				sc.nextLine();
 			}
 		}
-		
 	}
-
 }
